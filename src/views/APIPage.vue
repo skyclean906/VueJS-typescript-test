@@ -21,10 +21,26 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import axios from 'axios';
 
+
+
+interface POST {
+  title: string,
+  body: string
+}
+
+interface ERROR {
+  message: string,
+}
 @Component({})
 export default class APIPage extends Vue {
   posts = [];
   errors = [] as any;
+  data(){
+    return {
+      posts: [] as POST[],
+      errors: [] as ERROR[],
+    }
+  }
   mounted() : void {
       console.log("mounted");
   }
